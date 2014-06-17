@@ -44,7 +44,7 @@ input[type=submit] {
   font-size: 13px;
   line-height: 28px;
   margin: 5px 0;
-  padding: 0 20px;
+  padding: 0 10px;
   border: 5px solid #c8e6f0;
 }
 
@@ -67,7 +67,7 @@ input[type=text] {
   font-size: 13px;
   line-height: 28px;
   margin: 5px 0;
-  padding: 0 20px;
+  padding: 0 10px;
   border: 5px solid #c8e6f0;
 }
 
@@ -90,7 +90,7 @@ input[type=email] {
   font-size: 13px;
   line-height: 28px;
   margin: 5px 0;
-  padding: 0 20px;
+  padding: 0 10px;
   border: 5px solid #c8e6f0;
 }
 
@@ -113,6 +113,6 @@ input[type=password] {
   font-size: 13px;
   line-height: 28px;
   margin: 5px 0;
-  padding: 0 20px;
+  padding: 0 10px;
   border: 5px solid #c8e6f0;
 }
