@@ -1,20 +1,19 @@
-<body>
 <h1>Welcome to the bookmark manager</h1>
 
-Current links:
+<h3>Current links:</h3>
+<article id="links">
 <ul>
 	<% @links.each do |link| %>
 	<li><a href="<%= link.url %>"><%= link.title %></a></li>
 	<% end %>
 </ul> 
+</article>
 
 <div id="new-link">
-  <form action="/links" method="post">
+  <form action="/links" method="POST">
     Url: <input type="text" name="url" placeholder="URL">
     Title: <input type="text" name="title" placeholder="Title">
     Tags: <input type="text" name="tags" placeholder="Tags">
     <input type="submit" value="Add link">
   </form>
 </div>
-
-</body>

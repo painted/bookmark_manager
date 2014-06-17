@@ -10,6 +10,21 @@ h1 {
 	color: #ffffff;
 }
 
+h3 {
+	font-family: Georgia, Times, serif;
+	font-size: 3em;
+	font-weight: 500;
+	color: #ffffff;
+}
+
+article[id="links"] {
+	font-family: Georgia, Times, serif;
+	font-size: 2em;
+	font-weight: 500;
+	color: #ffffff;
+
+}
+
 input[type=submit] {
   height: 38px;
   text-align: center;
