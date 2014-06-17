@@ -1,0 +1,11 @@
+body {
+	padding: 16em 16em;
+	background-color: #000000;
+}
+
+h1 {
+	font-family: Georgia, Times, serif;
+	font-size: 6em;
+	font-weight: 500;
+	color: #ffffff;
+}
