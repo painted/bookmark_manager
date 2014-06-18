@@ -11,4 +11,3 @@ task :auto_migrate do
 	puts "Auto-migrate complete (data could have been lost)"
 end
 	
-end

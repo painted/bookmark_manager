@@ -16,7 +16,7 @@ class User
 		self.password_digest = BCrypt::Password.create(password)
 	end
 
-	validates_confirmation_of :password 
+	validates_confirmation_of :password, :message => "Sorry, your passwords don't match"
 	# validates_uniqueness_of :email
 
 	def self.authenticate(email, password)
