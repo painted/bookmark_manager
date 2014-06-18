@@ -1,6 +1,8 @@
 body {
 	padding: 16em 16em;
 	background-color: #000000;
+	font-family: Georgia, Times, serif;
+	color: #ffffff;
 }
 
 h1 {
@@ -116,3 +118,4 @@ input[type=password] {
   padding: 0 10px;
   border: 5px solid #c8e6f0;
 }
+
