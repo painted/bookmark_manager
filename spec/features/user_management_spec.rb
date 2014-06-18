@@ -31,6 +31,5 @@ feature "User signs up" do
 		expect(page).to have_content("This email is already registered")
 	end
 
-
-
 end
+
