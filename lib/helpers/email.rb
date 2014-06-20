@@ -1,6 +1,6 @@
 require 'rest_client'
 
-API_KEY = ENV['MAILGUN_API_KEY']
+API_KEY = ENV["MAILGUN_API_KEY"]
 API_URL = "https://api:#{API_KEY}@api.mailgun.net/v2/<app26576893.mailgun.org>"
 
 RestClient.post API_URL+"/messages",
