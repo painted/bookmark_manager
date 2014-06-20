@@ -15,7 +15,29 @@ post '/sessions' do
 end
 
 delete '/sessions' do 
-	flash[:notice] = ["Good bye!"]
+	flash[:notice] = "Good bye!"
 	session[:user_id] = nil
-	redirect to('/')
+	erb :"sessions/new"
+	# redirect to('/')
+end
+
+get '/sessions/forgotten_password' do 
+	erb :"sessions/forgotten_password"
+end
+
+post'/sessions/forgotten_password' do 
+	email = params[:email]
+	user = User.first(:email => email)
+	if user
+		user.password_token = (1..64).map{('A'..'Z').to_a.sample}.join
+		user.password_token_timestamp = Time.now
+		user.save
+		flash[:errors] = ""
+		flash[:notice] = "A link has been sent to you to reset your password"
+		erb :"sessions/new"
+	else
+		flash[:notice] = ""
+		flash[:errors] = "This email does not exist"
+		erb :"sessions/forgotten_password"
+	end
 end

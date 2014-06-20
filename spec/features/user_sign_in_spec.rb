@@ -43,3 +43,21 @@ feature 'User signs out' do
 	end
 
 end
+
+feature 'User forgets password' do 
+
+	before(:each) do 
+		User.create(:email => "test@test.com",
+					:password => 'test',
+					:password_confirmation => 'test')
+	end
+
+	scenario 'user clicks on forgotten password' do
+		sign_in('test@test.com', 'wrong')
+		click_link 'Forgotten Password'
+		expect(page).to have_content("Please enter the email used for login")
+		expect(page).not_to have_content("Welcome, test@test.com")
+	end
+
+
+end

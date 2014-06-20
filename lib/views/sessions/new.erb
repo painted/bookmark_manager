@@ -1,7 +1,12 @@
-Please sign in.
+<h3>Please sign in...</h3>
 
-<form method="POST" action="/sessions">
+<form id="session" method="POST" action="/sessions">
 	<input type="email" name='email' placeholder='Email'>
 	<input type="password" name='password' placeholder='Pa55w0rd'>
 	<input type="submit" value="Sign In">
 </form>
+<a href="/sessions/forgotten_password">Forgotten Password</a>
+<!-- <form id="forgotten" method="GET" action="/forgotten_password">
+	<input type="submit" value="Forgotten Password?">
+</form> -->
+
