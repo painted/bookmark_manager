@@ -16,14 +16,12 @@ post '/users' do
 	end
 end
 
-get '/users/reset_password/:token' do 
+get '/users/reset_password' do 
 	token = params[:token]
 	@user = User.first(:password_token => token)
-	email = @user.email
 	time = @user.password_token_timestamp
 	if @user && Time.now >= time + (60 * 60) 
 		@user
-		# send_message(@user)
 		erb :"users/create_password"
 	else
 		flash[:errors] = "Your link has timed out please try again"
