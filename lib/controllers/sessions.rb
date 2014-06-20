@@ -25,7 +25,7 @@ get '/sessions/forgotten_password' do
 	erb :"sessions/forgotten_password"
 end
 
-post'/sessions/forgotten_password' do 
+post '/sessions/forgotten_password' do 
 	email = params[:email]
 	user = User.first(:email => email)
 	if user

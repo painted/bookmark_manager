@@ -3,6 +3,10 @@ require 'data_mapper'
 require 'rack-flash'
 require 'sinatra/partial'
 require 'uri'
+require 'rest_client'
+
+# puts "fpjoasdgknskdlfg"
+# puts ENV["MAILGUN_API_KEY"]
 
 require_relative 'models/link'
 require_relative 'models/tag'

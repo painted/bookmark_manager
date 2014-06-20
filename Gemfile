@@ -9,7 +9,7 @@ gem 'bcrypt-ruby'
 gem 'rack-flash3'
 gem 'sinatra-partial'
 gem 'pg'
-gem 'rest_client'
+gem 'rest-client'
 
 group :development, :test do 
 	gem 'rspec'
