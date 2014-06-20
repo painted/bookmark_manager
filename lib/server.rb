@@ -8,7 +8,7 @@ require_relative 'models/tag'
 require_relative 'models/user'
 require_relative 'data_mapper_setup'
 require_relative 'helpers/application'
-
+# require_relative 'helpers/email'
 
 
 require_relative 'controllers/sessions'

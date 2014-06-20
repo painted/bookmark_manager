@@ -19,8 +19,11 @@ end
 get '/users/reset_password/:token' do 
 	token = params[:token]
 	@user = User.first(:password_token => token)
-	if @user
+	email = @user.email
+	time = @user.password_token_timestamp
+	if @user && Time.now >= time + (60 * 60) 
 		@user
+		# send_message(@user)
 		erb :"users/create_password"
 	else
 		flash[:errors] = "Your link has timed out please try again"
@@ -33,10 +36,19 @@ end
 put '/users' do 
 	@user = User.first(:email => params[:email])
 	if @user
-		@user.update(:password => params[:password], :password_confirmation => params[:password_confirmation])
+		@user.update(:password => params[:password], :password_confirmation => params[:password_confirmation], :password_token => "", :password_token_timestamp => "")
 		redirect to('/')
 	else
 		flash[:errors] = "There was a problem with the update please try again"
 		erb :"users/new"
 	end
 end
+
+# def send_message(user)
+#   RestClient.post "https://#{API_KEY}"\
+#   "@api.mailgun.net/v2/app26576893.mailgun.org/messages",
+#   :from => "Very Excited User <me@app26576893.mailgun.org>",
+#   :to => "#{user.email}",
+#   :subject => "Hello",
+#   :text => "Please click on the following email to reset your password <a href="http://stark-dawn-2603.herokuapp.com/users/reset_password/<%=token%>">
+# end
